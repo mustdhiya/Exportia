@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exportia — Indonesian Digital Export Ecosystem</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+  <path fill='%233b82f6' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z'/>
+</svg>"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        /* Custom Liquid Glassmorphism Utilities */
+        .glass-premium {
+            background: rgba(15, 23, 42, 0.45);
+            backdrop-filter: blur(16px) saturate(180%);
+            -webkit-backdrop-filter: blur(16px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-premium:hover {
+            border-color: rgba(16, 185, 129, 0.3);
+            box-shadow: 0 0 30px rgba(16, 185, 129, 0.1);
+        }
+        .glass-card-glow {
+            background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(255,255,255,0.06), transparent 40%);
+        }
+        /* Infinite Marquee Animation */
+        @keyframes marquee {
+            0% { transform: translateX(0%); }
+            100% { transform: translateX(-50%); }
+        }
+        .animate-marquee {
+            animation: marquee 30s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen relative overflow-x-hidden">
+
+    <div class="fixed inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover scale-105">
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-black/45 z-10"></div>
+        <div class="absolute inset-0 bg-gradient-to-tr from-slate-950/80 via-transparent to-black/60 z-20"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,transparent_20%,rgba(2,6,23,0.6)_80%)] z-30"></div>
+    </div>
+
+    <div class="relative z-10 w-full">
+
+        <header class="sticky top-0 z-50 w-full px-4 lg:px-8 py-4">
+            <nav class="max-w-7xl mx-auto navbar glass-premium rounded-2xl px-6 justify-between transition-all duration-300">
+                <div class="navbar-start">
+                    <a href="#" class="text-2xl font-extrabold tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-emerald-400">
+                        EXPORTIA<span class="text-emerald-500">.</span>
+                    </a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal gap-2 px-1 text-sm font-medium text-slate-300">
+                        <li><a href="#services" class="hover:text-emerald-400">Services</a></li>
+                        <li><a href="#products" class="hover:text-emerald-400">Products</a></li>
+                        <li><a href="#buyer-requests" class="hover:text-emerald-400">Live Demands</a></li>
+                        <li><a href="#categories" class="hover:text-emerald-400">Categories</a></li>
+                        <li><a href="#features" class="hover:text-emerald-400">AI Platform</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end gap-3">
+                    <a href="#buyer-requests" class="btn btn-ghost btn-sm text-slate-300 hidden sm:inline-flex">Find Leads</a>
+                    <a href="#cta" class="btn btn-emerald bg-emerald-500 hover:bg-emerald-600 border-none text-slate-950 font-bold btn-sm lg:btn-md rounded-xl shadow-lg shadow-emerald-500/20">Join Ecosystem</a>
+                </div>
+            </nav>
+        </header>
+
+        <section class="relative min-h-[calc(100vh-88px)] flex flex-col justify-center items-center px-4 py-12 lg:py-20 overflow-hidden">
+            <div class="max-w-5xl mx-auto text-center relative z-10 flex flex-col items-center">
+                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full glass-premium text-xs font-semibold text-emerald-400 mb-6 border border-emerald-500/30 animate-pulse">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 block"></span>
+                    Indonesia's Leading B2B Sourcing Network
+                </div>
+                
+                <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6 leading-[1.15]">
+                    Helping Indonesian Suppliers <br>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 via-teal-300 to-cyan-400">
+                        Reach Global Buyers
+                    </span>
+                </h1>
+                
+                <p class="text-base md:text-xl text-slate-300 max-w-3xl font-light leading-relaxed mb-10">
+                    Build export credibility, showcase premium products, connect with vetted global buyers, and grow internationally through AI-powered optimization and dedicated human business matching.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center mb-16">
+                    <a href="#buyer-requests" class="btn btn-lg bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-8 border-none rounded-xl shadow-xl shadow-emerald-500/10 group">
+                        Find Global Buyers
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3" /></svg>
+                    </a>
+                    <a href="#products" class="btn btn-lg btn-outline glass-premium text-white border-white/20 hover:bg-white/10 px-8 rounded-xl">
+                        Explore Suppliers
+                    </a>
+                </div>
+
+                <div class="w-full max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-4 p-4 rounded-3xl glass-premium">
+                    <div class="text-center py-4 border-r border-white/5 last:border-none">
+                        <div class="text-2xl md:text-4xl font-extrabold text-white">500+</div>
+                        <div class="text-xs md:text-sm text-slate-400 mt-1">Verified Suppliers</div>
+                    </div>
+                    <div class="text-center py-4 border-r border-white/5 last:border-none">
+                        <div class="text-2xl md:text-4xl font-extrabold text-emerald-400">30+</div>
+                        <div class="text-xs md:text-sm text-slate-400 mt-1">Export Categories</div>
+                    </div>
+                    <div class="text-center py-4 border-r border-white/5 last:border-none">
+                        <div class="text-2xl md:text-4xl font-extrabold text-white">1,200+</div>
+                        <div class="text-xs md:text-sm text-slate-400 mt-1">Premium Products</div>
+                    </div>
+                    <div class="text-center py-4 last:border-none">
+                        <div class="text-2xl md:text-4xl font-extrabold text-cyan-400">Active</div>
+                        <div class="text-xs md:text-sm text-slate-400 mt-1">Buyer Network</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-8 glass-premium border-y border-white/5 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 mb-3">
+                <p class="text-center text-xs font-bold uppercase tracking-widest text-slate-500">Accelerating Trade with Verified Industry Giants & Logistics Partners</p>
+            </div>
+            <div class="flex overflow-x-hidden relative w-full mask-gradient">
+                <div class="flex gap-16 items-center whitespace-nowrap animate-marquee py-2">
+                    <span class="text-lg font-bold text-slate-400/60 tracking-wider">PT INDO AGRO TECH</span>
+                    <span class="text-lg font-bold text-slate-400/60 tracking-wider">CELEBES COCONUT CORP</span>
+                    <span class="text-lg font-bold text-slate-400/60 tracking-wider">SAMUDERA LOGISTICS</span>
+                    <span class="text-lg font-bold text-slate-400/60 tracking-wider">JAVA WOODWORKS CO</span>
+                    <span class="text-lg font-bold text-slate-400/60 tracking-wider">BRIQUETTE PIONEERS</span>
+                    <span class="text-lg font-bold text-slate-400/60 tracking-wider">GLOBAL NUSANTARA TRADING</span>
+                    <span class="text-lg font-bold text-slate-400/60 tracking-wider">PT INDO AGRO TECH</span>
+                    <span class="text-lg font-bold text-slate-400/60 tracking-wider">CELEBES COCONUT CORP</span>
+                    <span class="text-lg font-bold text-slate-400/60 tracking-wider">SAMUDERA LOGISTICS</span>
+                    <span class="text-lg font-bold text-slate-400/60 tracking-wider">JAVA WOODWORKS CO</span>
+                </div>
+            </div>
+        </section>
+
+        <section id="services" class="py-20 px-4 max-w-7xl mx-auto">
+            <div class="text-center md:text-left mb-12">
+                <h2 class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3">End-to-End Infrastructure</h2>
+                <p class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Full-Stack Export Ecosystem</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+                <div class="md:col-span-2 glass-premium p-8 rounded-3xl flex flex-col justify-between group">
+                    <div class="p-3 bg-emerald-500/10 rounded-2xl w-fit border border-emerald-500/20 text-emerald-400 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21a9.004 9.004 0 008.716-6.747M12 21a9.004 9.004 0 01-8.716-6.747M12 21c2.485 0 4.5-4.03 4.5-9S14.485 3 12 3m0 18c-2.485 0-4.5-4.03-4.5-9S9.515 3 12 3m0 0a8.997 8.997 0 017.843 4.582M12 3a8.997 8.997 0 00-7.843 4.582m15.686 0A11.953 11.953 0 0112 10.5c-2.998 0-5.74-1.1-7.843-2.918m15.686 0A8.959 8.959 0 0121 12c0 .778-.099 1.533-.284 2.253m0 0A17.919 17.919 0 0112 16.5c-3.162 0-6.133-.815-8.716-2.247m0 0A9.015 9.015 0 013 12c0-.778.099-1.533.284-2.253" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Export Website Development</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Get a standalone high-converting custom company profile website, complete with international SEO schemas and multi-language capability built natively.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-6 rounded-3xl flex flex-col justify-between group">
+                    <div class="p-3 bg-cyan-500/10 rounded-2xl w-fit border border-cyan-500/20 text-cyan-400 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.65-2.38 9.141 9.141 0 00-3.837 3.61m-.414-3.61a9.141 9.141 0 01-3.837-3.61V9H4.5v10.5a3 3 0 003 3h1.318M15 9h.008v.008H15V9zm3 0h.008v.008H18V9zm-3 3h.008v.008H15V12zm3 0h.008v.008H18V12z" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Business Matching</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Human-vetted, direct introductory bridge connecting active verified suppliers to corporate buyers globally.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-6 rounded-3xl flex flex-col justify-between group">
+                    <div class="p-3 bg-purple-500/10 rounded-2xl w-fit border border-purple-500/20 text-purple-400 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">International Buyer Sourcing</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Active monitoring of major global import records to extract valid leads requiring Indonesian commodities.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-6 rounded-3xl flex flex-col justify-between group">
+                    <div class="p-3 bg-amber-500/10 rounded-2xl w-fit border border-amber-500/20 text-amber-400 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 006 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 016 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 016-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0018 18a8.967 8.967 0 00-6 2.292m0-14.25v14.25" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Export Consultation</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Direct support regarding payment systems, LC processing, trade terms, and contract validation.</p>
+                    </div>
+                </div>
+
+                <div class="md:col-span-2 glass-premium p-8 rounded-3xl flex flex-col justify-between group">
+                    <div class="p-3 bg-teal-500/10 rounded-2xl w-fit border border-teal-500/20 text-teal-400 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12c0 1.268-.63 2.39-1.593 3.068a3.745 3.745 0 01-1.043 3.296 3.745 3.745 0 01-3.296 1.043A3.745 3.745 0 0110 21a3.745 3.745 0 01-3.296-1.043 3.745 3.745 0 01-1.043-3.296A3.745 3.745 0 013 12c0-1.268.63-2.39 1.593-3.068a3.745 3.745 0 011.043-3.296 3.745 3.745 0 013.296-1.043A3.746 3.746 0 0114 3c1.268 0 2.39.63 3.068 1.593a3.746 3.746 0 013.296 1.043 3.746 3.746 0 011.043 3.296A3.745 3.745 0 0121 12z" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Supplier Verification & Badge</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">On-site facility auditing, legal documentation check, and production capacity certification that awards an absolute Trust Stamp for international buyers.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-6 rounded-3xl flex flex-col justify-between group">
+                    <div class="p-3 bg-rose-500/10 rounded-2xl w-fit border border-rose-500/20 text-rose-400 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75V18m-3-3v3m-3-3v3M14.25 9.25a1.5 1.5 0 11-3 0 1.5 1.5 0 013 0z" /><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12c0 5.385 4.365 9.75 9.75 9.75s9.75-4.365 9.75-9.75S17.385 2.25 12 2.25 2.25 12z" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">SEO for Exporters</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Bespoke search alignment mapping to target terms in Europe, America, and the Middle East markets.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-6 rounded-3xl flex flex-col justify-between group">
+                    <div class="p-3 bg-blue-500/10 rounded-2xl w-fit border border-blue-500/20 text-blue-400 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 13.5h3.86a2.25 2.25 0 012.008 1.24l.885 1.77a2.25 2.25 0 002.007 1.24h1.98a2.25 2.25 0 002.007-1.24l.885-1.77a2.25 2.25 0 012.007-1.24h3.86m-18 0h18" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Product Catalog Design</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Creation of professional export sheets containing complete packing data, container calculations, and high-definition renders.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-6 rounded-3xl flex flex-col justify-between group">
+                    <div class="p-3 bg-orange-500/10 rounded-2xl w-fit border border-orange-500/20 text-orange-400 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M7.5 14.25v2.25m3-4.5v4.5m3-6.75v6.75m3-9v9M6 20.25h12A2.25 2.25 0 0020.25 18V6A2.25 2.25 0 0018 3.75H6A2.25 2.25 0 003.75 6v12A2.25 2.25 0 006 20.25z" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Export Lead Gen</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Direct routing of automated commercial digital purchase intents sent straight to dashboard panels.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-6 rounded-3xl flex flex-col justify-between group">
+                    <div class="p-3 bg-indigo-500/10 rounded-2xl w-fit border border-indigo-500/20 text-indigo-400 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="m10.5 21 5.25-11.25L21 21m-9-3h7.5M3 5.621a48.474 48.474 0 0 1 6-.371m0 0c1.12 0 2.233.038 3.334.114M9 5.25V3m3.334 2.364C11.176 10.658 7.69 15.08 3 17.502m9.334-12.138c.896 3.066 2.418 5.813 4.475 8.136m-7.234-5.222a48.536 48.536 0 0 1-1.097 5.792M3 9.143c1.62-.124 3.257-.186 4.903-.186m0 0a48.393 48.393 0 0 1 3.527.13" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Translation Service</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Professional localization of technical terms, specs sheet translations, and negotiation interpretation assets.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-6 rounded-3xl flex flex-col justify-between group">
+                    <div class="p-3 bg-violet-500/10 rounded-2xl w-fit border border-violet-500/20 text-violet-400 mb-6">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" /></svg>
+                    </div>
+                    <div>
+                        <h3 class="text-lg font-bold text-white mb-2 group-hover:text-emerald-400 transition-colors">Export Documentation</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Frictionless processing coordination for COO, Phytosanitary, Fumigation Certificates, and customs clearance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="products" class="py-20 px-4 bg-slate-900/40 border-y border-white/5 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto">
+                <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                    <div>
+                        <h2 class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3">Live Marketplace Preview</h2>
+                        <p class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Verified Export Commodities</p>
+                    </div>
+                    <a href="#" class="btn btn-sm btn-outline text-slate-300 border-white/10 hover:bg-white/5 rounded-xl self-start md:self-auto">View Entire Catalog (1,200+)</a>
+                </div>
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                    <div class="glass-premium rounded-2xl overflow-hidden group flex flex-col justify-between">
+                        <div class="relative aspect-square bg-slate-800">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-4 bg-gradient-to-b from-slate-800 to-slate-950">
+                                <span class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-1">Premium Grade</span>
+                                <span class="text-center font-bold text-sm text-slate-200 px-2 line-clamp-2">Coconut Charcoal Briquette</span>
+                                <div class="badge badge-emerald mt-4 text-[10px] font-bold">SHISHA / BBQ</div>
+                            </div>
+                            <span class="absolute top-3 left-3 badge badge-emerald text-[10px] font-extrabold p-2 shadow-md">VERIFIED SUPPLIER</span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-xs text-slate-400 font-semibold mb-1">PT. Coconut Carbon Global</p>
+                            <h4 class="font-bold text-white text-base group-hover:text-emerald-400 transition-colors mb-3 line-clamp-1">Premium Cubic Charcoal</h4>
+                            <div class="border-t border-white/5 pt-3 flex items-center justify-between text-xs">
+                                <div>
+                                    <span class="block text-slate-500 font-medium">MOQ</span>
+                                    <span class="font-bold text-slate-200">1x20ft Container</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="block text-slate-500 font-medium">Target Port</span>
+                                    <span class="font-bold text-cyan-400">Rotterdam / Jebel Ali</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-premium rounded-2xl overflow-hidden group flex flex-col justify-between">
+                        <div class="relative aspect-square bg-slate-800">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-4 bg-gradient-to-b from-slate-800 to-slate-950">
+                                <span class="text-xs font-bold tracking-widest text-amber-400 uppercase mb-1">Solid Wood</span>
+                                <span class="text-center font-bold text-sm text-slate-200 px-2 line-clamp-2">Teak Dining Table Set</span>
+                                <div class="badge badge-warning mt-4 text-[10px] font-bold">FURNITURE</div>
+                            </div>
+                            <span class="absolute top-3 left-3 badge badge-emerald text-[10px] font-extrabold p-2 shadow-md">VERIFIED SUPPLIER</span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-xs text-slate-400 font-semibold mb-1">CV. Jati Nusantara Art</p>
+                            <h4 class="font-bold text-white text-base group-hover:text-emerald-400 transition-colors mb-3 line-clamp-1">Minimalist Teak Collection</h4>
+                            <div class="border-t border-white/5 pt-3 flex items-center justify-between text-xs">
+                                <div>
+                                    <span class="block text-slate-500 font-medium">MOQ</span>
+                                    <span class="font-bold text-slate-200">1 LCL / 20 Pcs</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="block text-slate-500 font-medium">Target Port</span>
+                                    <span class="font-bold text-cyan-400">Los Angeles Port</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-premium rounded-2xl overflow-hidden group flex flex-col justify-between">
+                        <div class="relative aspect-square bg-slate-800">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-4 bg-gradient-to-b from-slate-800 to-slate-950">
+                                <span class="text-xs font-bold tracking-widest text-teal-400 uppercase mb-1">Organic Grade A</span>
+                                <span class="text-center font-bold text-sm text-slate-200 px-2 line-clamp-2">Gayo Arabica Green Beans</span>
+                                <div class="badge badge-accent mt-4 text-[10px] font-bold">AGRICULTURE</div>
+                            </div>
+                            <span class="absolute top-3 left-3 badge badge-emerald text-[10px] font-extrabold p-2 shadow-md">VERIFIED SUPPLIER</span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-xs text-slate-400 font-semibold mb-1">Koperasi Gayo Coffee Harvest</p>
+                            <h4 class="font-bold text-white text-base group-hover:text-emerald-400 transition-colors mb-3 line-clamp-1">Single Origin Arabica Beans</h4>
+                            <div class="border-t border-white/5 pt-3 flex items-center justify-between text-xs">
+                                <div>
+                                    <span class="block text-slate-500 font-medium">MOQ</span>
+                                    <span class="font-bold text-slate-200">5 Metric Tons</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="block text-slate-500 font-medium">Target Port</span>
+                                    <span class="font-bold text-cyan-400">Tokyo / Hamburg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-premium rounded-2xl overflow-hidden group flex flex-col justify-between">
+                        <div class="relative aspect-square bg-slate-800">
+                            <div class="absolute inset-0 flex flex-col items-center justify-center p-4 bg-gradient-to-b from-slate-800 to-slate-950">
+                                <span class="text-xs font-bold tracking-widest text-pink-400 uppercase mb-1">Handmade Heritage</span>
+                                <span class="text-center font-bold text-sm text-slate-200 px-2 line-clamp-2">Natural Rattan Laundry Basket</span>
+                                <div class="badge badge-secondary mt-4 text-[10px] font-bold">HANDICRAFT</div>
+                            </div>
+                            <span class="absolute top-3 left-3 badge badge-emerald text-[10px] font-extrabold p-2 shadow-md">VERIFIED SUPPLIER</span>
+                        </div>
+                        <div class="p-5">
+                            <p class="text-xs text-slate-400 font-semibold mb-1">CV. Borneo Craft Weaver</p>
+                            <h4 class="font-bold text-white text-base group-hover:text-emerald-400 transition-colors mb-3 line-clamp-1">Eco-Friendly Rattan Set</h4>
+                            <div class="border-t border-white/5 pt-3 flex items-center justify-between text-xs">
+                                <div>
+                                    <span class="block text-slate-500 font-medium">MOQ</span>
+                                    <span class="font-bold text-slate-200">200 Units</span>
+                                </div>
+                                <div class="text-right">
+                                    <span class="block text-slate-500 font-medium">Target Port</span>
+                                    <span class="font-bold text-cyan-400">Sydney / Melbourne</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="buyer-requests" class="py-20 px-4 max-w-7xl mx-auto">
+            <div class="text-center mb-12">
+                <div class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-red-500/10 text-red-400 text-xs font-bold border border-red-500/20 mb-3">
+                    <span class="w-1.5 h-1.5 rounded-full bg-red-400 animate-ping"></span> Live Global RFQ Feed
+                </div>
+                <p class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Active Buyer Inquiries</p>
+                <p class="text-slate-400 mt-2 text-sm md:text-base">Verified international commercial inquiries updated live. Matchmaking team active.</p>
+            </div>
+
+            <div class="space-y-4 max-w-5xl mx-auto">
+                <div class="glass-premium p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center font-bold text-xl border border-white/10 shadow-inner">
+                            🇦🇪
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <h3 class="text-base font-bold text-white">Importer from Dubai, UAE</h3>
+                                <div class="badge badge-ghost text-xs bg-white/5 text-slate-400 border-none">Coconut Charcoal</div>
+                                <span class="text-xs text-emerald-400 font-medium">Verified Intent</span>
+                            </div>
+                            <p class="text-sm text-slate-300 mt-1">"Seeking premium coconut shell charcoal briquettes for shisha. Factory audit required. Fixed long-term contract."</p>
+                            <div class="flex gap-4 text-xs text-slate-400 mt-3 font-medium">
+                                <span>Volume: <strong class="text-slate-200">2x40ft containers/month</strong></span>
+                                <span>Terms: <strong class="text-slate-200">FOB Tanjung Priok</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex md:flex-col items-end justify-between w-full md:w-auto border-t md:border-t-0 border-white/5 pt-3 md:pt-0">
+                        <span class="text-xs text-slate-500 font-medium mb-1">Posted 4 mins ago</span>
+                        <button class="btn btn-emerald bg-emerald-500 hover:bg-emerald-600 border-none text-slate-950 font-bold btn-sm rounded-lg">Apply for Match</button>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center font-bold text-xl border border-white/10 shadow-inner">
+                            🇩🇪
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <h3 class="text-base font-bold text-white">Furniture Wholesaler from Hamburg, Germany</h3>
+                                <div class="badge badge-ghost text-xs bg-white/5 text-slate-400 border-none">Teak Furniture</div>
+                                <span class="text-xs text-emerald-400 font-medium">Verified Intent</span>
+                            </div>
+                            <p class="text-sm text-slate-300 mt-1">"Looking for Indonesian SVLK certified legal teak furniture suppliers for outdoor hospitality collections."</p>
+                            <div class="flex gap-4 text-xs text-slate-400 mt-3 font-medium">
+                                <span>Volume: <strong class="text-slate-200">1x20ft container trial</strong></span>
+                                <span>Terms: <strong class="text-slate-200">CIF Hamburg Port</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex md:flex-col items-end justify-between w-full md:w-auto border-t md:border-t-0 border-white/5 pt-3 md:pt-0">
+                        <span class="text-xs text-slate-500 font-medium mb-1">Posted 2 hours ago</span>
+                        <button class="btn btn-emerald bg-emerald-500 hover:bg-emerald-600 border-none text-slate-950 font-bold btn-sm rounded-lg">Apply for Match</button>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-6 rounded-2xl flex flex-col md:flex-row justify-between items-start md:items-center gap-4 transition-all duration-300">
+                    <div class="flex items-start gap-4">
+                        <div class="w-12 h-12 rounded-xl bg-slate-800 flex items-center justify-center font-bold text-xl border border-white/10 shadow-inner">
+                            🇺🇸
+                        </div>
+                        <div>
+                            <div class="flex items-center gap-2 flex-wrap">
+                                <h3 class="text-base font-bold text-white">Coffee Distributor from Seattle, USA</h3>
+                                <div class="badge badge-ghost text-xs bg-white/5 text-slate-400 border-none">Arabica Coffee</div>
+                                <span class="text-xs text-emerald-400 font-medium">Verified Intent</span>
+                            </div>
+                            <p class="text-sm text-slate-300 mt-1">"Urgent request for green bean Arabica coffee (Gayo/Mandheling) grade 1 with moisture level below 12.5%."</p>
+                            <div class="flex gap-4 text-xs text-slate-400 mt-3 font-medium">
+                                <span>Volume: <strong class="text-slate-200">18 Metric Tons</strong></span>
+                                <span>Terms: <strong class="text-slate-200">FOB Belawan Port</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex md:flex-col items-end justify-between w-full md:w-auto border-t md:border-t-0 border-white/5 pt-3 md:pt-0">
+                        <span class="text-xs text-slate-500 font-medium mb-1">Posted 1 day ago</span>
+                        <button class="btn btn-emerald bg-emerald-500 hover:bg-emerald-600 border-none text-slate-950 font-bold btn-sm rounded-lg">Apply for Match</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 bg-slate-950/70 backdrop-blur-md border-t border-white/5">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3">Hybrid Trade Framework</h2>
+                    <p class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Human-Assisted Matching Flow</p>
+                    <p class="text-slate-400 mt-2 max-w-xl mx-auto text-sm md:text-base">We combine cutting-edge SaaS tracking dashboards with real expert account managers to guarantee successful transactions.</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-5 gap-6">
+                    <div class="glass-premium p-6 rounded-2xl relative border-l-4 border-l-emerald-500">
+                        <div class="text-3xl font-black text-white/20 mb-4">01</div>
+                        <h4 class="text-base font-bold text-white mb-2">Supplier Onboarding</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Indonesian SMEs join the system and build clean, SEO-optimized digital profiles.</p>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl relative border-l-4 border-l-cyan-500">
+                        <div class="text-3xl font-black text-white/20 mb-4">02</div>
+                        <h4 class="text-base font-bold text-white mb-2">On-Site Verification</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Our internal field auditors physically check factory capacity, licenses, and legalities.</p>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl relative border-l-4 border-l-purple-500">
+                        <div class="text-3xl font-black text-white/20 mb-4">03</div>
+                        <h4 class="text-base font-bold text-white mb-2">Buyer Sourcing</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Global trade channels extract high-volume intents from verified active importers.</p>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl relative border-l-4 border-l-amber-500">
+                        <div class="text-3xl font-black text-white/20 mb-4">04</div>
+                        <h4 class="text-base font-bold text-white mb-2">Curated Matching</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Trade managers directly connect matching buyers and verified suppliers on the platform.</p>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl relative border-l-4 border-l-emerald-400">
+                        <div class="text-3xl font-black text-white/20 mb-4">05</div>
+                        <h4 class="text-base font-bold text-white mb-2">Deal Secured</h4>
+                        <p class="text-xs text-slate-400 leading-relaxed">Complete administrative assistance for secure payment setups, logistics, and shipping.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 max-w-7xl mx-auto">
+            <div class="text-center md:text-left mb-12">
+                <h2 class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3">Proven Track Record</h2>
+                <p class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Recent Trade Deployments</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-premium rounded-3xl overflow-hidden group flex flex-col justify-between">
+                    <div class="bg-slate-900 p-8 h-48 flex flex-col justify-center items-center text-center bg-gradient-to-br from-slate-900 to-slate-950 relative">
+                        <span class="text-xs font-extrabold text-slate-500 tracking-wider mb-2">COMPANY DOMAIN ACTIVATED</span>
+                        <h4 class="text-lg font-bold text-white px-4">www.indocarbon-export.com</h4>
+                        <div class="badge badge-emerald mt-4 text-[10px] py-2 px-3">Catalog & SEO Generated</div>
+                    </div>
+                    <div class="p-6 border-t border-white/5 bg-slate-950/40">
+                        <span class="text-xs font-bold text-emerald-400">Briquette Supplier Profile</span>
+                        <h3 class="text-lg font-bold text-white mt-1 mb-2">PT. Indocarbon Global</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Generated corporate identity, targeted SEO keywords for Middle-East markets, resulting in 4 verified leads inside the first 30 days.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium rounded-3xl overflow-hidden group flex flex-col justify-between">
+                    <div class="bg-slate-900 p-8 h-48 flex flex-col justify-center items-center text-center bg-gradient-to-br from-slate-900 to-slate-950 relative">
+                        <span class="text-xs font-extrabold text-slate-500 tracking-wider mb-2">MATCHMAKING CASE ID #8849</span>
+                        <div class="text-2xl font-bold text-white">14 Tons Cloves</div>
+                        <div class="text-emerald-400 font-bold text-xs mt-1">Shipped to Rotterdam, NL</div>
+                    </div>
+                    <div class="p-6 border-t border-white/5 bg-slate-950/40">
+                        <span class="text-xs font-bold text-emerald-400">Spices Sourcing Deployment</span>
+                        <h3 class="text-lg font-bold text-white mt-1 mb-2">SME Spices Alliance</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Connected a grower cooperative in North Sulawesi with a Dutch food chemical processor via custom RFQ orchestration tools.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium rounded-3xl overflow-hidden group flex flex-col justify-between">
+                    <div class="bg-slate-900 p-8 h-48 flex flex-col justify-center items-center text-center bg-gradient-to-br from-slate-900 to-slate-950 relative">
+                        <span class="text-xs font-extrabold text-slate-500 tracking-wider mb-2">EXPORT DIGITIZATION</span>
+                        <h4 class="text-lg font-bold text-white px-4">Multilingual Profile Framework</h4>
+                        <div class="badge badge-cyan mt-4 text-[10px] py-2 px-3">English / German Layouts</div>
+                    </div>
+                    <div class="p-6 border-t border-white/5 bg-slate-950/40">
+                        <span class="text-xs font-bold text-emerald-400">Furniture Manufacturer Hub</span>
+                        <h3 class="text-lg font-bold text-white mt-1 mb-2">CV. Jepara Living Line</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Transitioned a traditional woodworking workshop into a digital enterprise ready for EU container-load bidding pipelines.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="categories" class="py-20 px-4 bg-slate-900/30 border-y border-white/5 backdrop-blur-sm">
+            <div class="max-w-7xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3">Sourcing Hubs</h2>
+                    <p class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Explore Ecosystem Industries</p>
+                </div>
+
+                <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                    <div class="glass-premium p-6 rounded-2xl text-center hover:scale-[1.02] transition-transform duration-300 group cursor-pointer">
+                        <div class="text-2xl mb-2">🛋️</div>
+                        <h4 class="font-bold text-white group-hover:text-emerald-400">Furniture</h4>
+                        <span class="text-xs text-slate-500 font-medium">124 Suppliers</span>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl text-center hover:scale-[1.02] transition-transform duration-300 group cursor-pointer">
+                        <div class="text-2xl mb-2">🥥</div>
+                        <h4 class="font-bold text-white group-hover:text-emerald-400">Coconut</h4>
+                        <span class="text-xs text-slate-500 font-medium">98 Suppliers</span>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl text-center hover:scale-[1.02] transition-transform duration-300 group cursor-pointer">
+                        <div class="text-2xl mb-2">🔥</div>
+                        <h4 class="font-bold text-white group-hover:text-emerald-400">Charcoal</h4>
+                        <span class="text-xs text-slate-500 font-medium">62 Suppliers</span>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl text-center hover:scale-[1.02] transition-transform duration-300 group cursor-pointer">
+                        <div class="text-2xl mb-2">🏺</div>
+                        <h4 class="font-bold text-white group-hover:text-emerald-400">Handicraft</h4>
+                        <span class="text-xs text-slate-500 font-medium">145 Suppliers</span>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl text-center hover:scale-[1.02] transition-transform duration-300 group cursor-pointer">
+                        <div class="text-2xl mb-2">🌱</div>
+                        <h4 class="font-bold text-white group-hover:text-emerald-400">Agriculture</h4>
+                        <span class="text-xs text-slate-500 font-medium">210 Suppliers</span>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl text-center hover:scale-[1.02] transition-transform duration-300 group cursor-pointer">
+                        <div class="text-2xl mb-2">🧵</div>
+                        <h4 class="font-bold text-white group-hover:text-emerald-400">Textile</h4>
+                        <span class="text-xs text-slate-500 font-medium">48 Suppliers</span>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl text-center hover:scale-[1.02] transition-transform duration-300 group cursor-pointer">
+                        <div class="text-2xl mb-2">🐟</div>
+                        <h4 class="font-bold text-white group-hover:text-emerald-400">Seafood</h4>
+                        <span class="text-xs text-slate-500 font-medium">37 Suppliers</span>
+                    </div>
+                    <div class="glass-premium p-6 rounded-2xl text-center hover:scale-[1.02] transition-transform duration-300 group cursor-pointer">
+                        <div class="text-2xl mb-2">☕</div>
+                        <h4 class="font-bold text-white group-hover:text-emerald-400">Coffee & Spices</h4>
+                        <span class="text-xs text-slate-500 font-medium">118 Suppliers</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="features" class="py-20 px-4 max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3">AI & SaaS Module</h2>
+                <p class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Ecosystem Software Stack</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="glass-premium p-8 rounded-3xl md:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <div class="badge badge-accent text-xs font-bold py-3 mb-4">ENGINE AUTOMATION</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">AI Product Description & Translation Suite</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed max-w-xl">Type your specifications in Indonesian. Our built-in global model automatically formats technical export structures, applies matching HS-Codes, and translates flawlessly to commercial English.</p>
+                    </div>
+                    <div class="mt-6 bg-slate-950/80 rounded-xl p-4 font-mono text-xs text-slate-400 border border-white/5">
+                        <span class="text-emerald-400">// AI English Generation Output</span><br>
+                        <span class="text-white">"Premium Grade A Coconut Charcoal Briquettes, low ash content (1.8%), fixed carbon 80% min. Perfect for international commercial distribution lines..."</span>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="badge badge-emerald text-xs font-bold py-3 mb-4">MATCHMAKING SOURCING</div>
+                        <h3 class="text-xl font-bold text-white mb-2">AI Buyer Recommendation</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Automatic cross-analysis engine that pairs incoming buyer requests directly with specific premium verified supplier catalogs inside the database instantly.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-8 rounded-3xl flex flex-col justify-between">
+                    <div>
+                        <div class="badge badge-ghost bg-white/5 text-xs font-bold py-3 mb-4">SEO PLATFORM</div>
+                        <h3 class="text-xl font-bold text-white mb-2">Automated SEO Structure</h3>
+                        <p class="text-xs text-slate-400 leading-relaxed">Every catalog entry dynamically generates Google schema markups, sitemaps, and optimized clean slugs instantly to dominate global business search queries.</p>
+                    </div>
+                </div>
+
+                <div class="glass-premium p-8 rounded-3xl md:col-span-2 flex flex-col justify-between">
+                    <div>
+                        <div class="badge badge-primary text-xs font-bold py-3 mb-4">INTERNAL PANEL MANAGEMENTS</div>
+                        <h3 class="text-2xl font-bold text-white mb-2">Inquiry Tracking & Live CRM Systems</h3>
+                        <p class="text-sm text-slate-400 leading-relaxed">Suppliers monitor detailed inbound traffic records, access incoming message requests safely, analyze target locations, and review performance reports in real time.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-20 px-4 bg-slate-900/40 border-t border-white/5 backdrop-blur-sm">
+            <div class="max-w-5xl mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-xs font-bold tracking-widest text-emerald-400 uppercase mb-3">Testimonials</h2>
+                    <p class="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Real Exporter Validation</p>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="glass-premium p-8 rounded-2xl flex flex-col justify-between">
+                        <p class="text-sm text-slate-300 italic leading-relaxed">
+                            "Exportia fundamentally changed our family business trajectory. Within 3 weeks of deploying our verified company profile, we matched with a commercial barbecue charcoal packager from Saudi Arabia. Our first container shipped last month."
+                        </p>
+                        <div class="flex items-center gap-3 mt-6 border-t border-white/5 pt-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center font-bold text-sm">H</div>
+                            <div>
+                                <h5 class="text-sm font-bold text-white">Hendra Wijaya</h5>
+                                <p class="text-xs text-slate-500">Managing Director, PT. Bara Shell Nusantara — 🇮🇩 Central Java</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="glass-premium p-8 rounded-2xl flex flex-col justify-between">
+                        <p class="text-sm text-slate-300 italic leading-relaxed">
+                            "Finding trust across oceans is difficult. Exportia's on-site verification parameters give international corporations confidence. The platform handled the SEO requirements perfectly, leading us to an architectural client from Australia."
+                        </p>
+                        <div class="flex items-center gap-3 mt-6 border-t border-white/5 pt-4">
+                            <div class="w-10 h-10 rounded-full bg-slate-700 flex items-center justify-center font-bold text-sm">S</div>
+                            <div>
+                                <h5 class="text-sm font-bold text-white">Siti Rahmaawati</h5>
+                                <p class="text-xs text-slate-500">Co-Founder, Jepara Fine Teak Alliance — 🇮🇩 East Java</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="cta" class="py-24 px-4 text-center relative overflow-hidden">
+            <div class="max-w-4xl mx-auto relative z-10 flex flex-col items-center">
+                <h2 class="text-3xl md:text-6xl font-extrabold text-white tracking-tight mb-6">
+                    Start Growing Your <br>
+                    <span class="bg-clip-text text-transparent bg-gradient-to-r from-emerald-400 to-cyan-400">Export Business Today</span>
+                </h2>
+                <p class="text-base md:text-xl text-slate-400 max-w-2xl font-light mb-10 leading-relaxed">
+                    Join Indonesia’s premier digitized export network. Let our automation suite highlight your assets while our expert trade managers map you directly to waiting global buyer pipelines.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 w-full sm:w-auto justify-center">
+                    <button class="btn btn-lg bg-emerald-500 hover:bg-emerald-600 text-slate-950 font-bold px-10 border-none rounded-xl shadow-xl shadow-emerald-500/10">
+                        Become a Supplier
+                    </button>
+                    <button class="btn btn-lg btn-outline glass-premium text-white border-white/20 hover:bg-white/10 px-10 rounded-xl">
+                        Find Export Products
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer p-10 max-w-7xl mx-auto border-t border-white/5 text-slate-400 justify-between">
+            <aside>
+                <span class="text-xl font-black text-white tracking-wider">EXPORTIA<span class="text-emerald-500">.</span></span>
+                <p class="text-xs mt-2 max-w-xs leading-relaxed">Indonesia's Premium B2B Digital Sourcing and Assisted Business Matching Ecosystem Platform.</p>
+                <p class="text-xs mt-4 text-slate-600">&copy; 2026 Exportia Tech Hub. All rights reserved.</p>
+            </aside> 
+            <nav>
+                <h6 class="footer-title text-white text-xs font-bold tracking-widest opacity-100 mb-4">ECOSYSTEM</h6> 
+                <a href="#services" class="link link-hover hover:text-emerald-400 text-sm mb-1">Services Grid</a>
+                <a href="#products" class="link link-hover hover:text-emerald-400 text-sm mb-1">Commodity Catalog</a>
+                <a href="#buyer-requests" class="link link-hover hover:text-emerald-400 text-sm mb-1">Live Buyer Feeds</a>
+            </nav> 
+            <nav>
+                <h6 class="footer-title text-white text-xs font-bold tracking-widest opacity-100 mb-4">RESOURCES</h6> 
+                <a href="#" class="link link-hover hover:text-emerald-400 text-sm mb-1">HS-Code Database</a>
+                <a href="#" class="link link-hover hover:text-emerald-400 text-sm mb-1">Documentation Support</a>
+                <a href="#" class="link link-hover hover:text-emerald-400 text-sm mb-1">Sitemap Index</a>
+            </nav>
+        </footer>
+
+    </div>
+
+<script src="nav_page.js"></script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Global Market Intelligence Terminal & Export Trade Analytics | Exportia</title>
+    
+    <meta name="description" content="Access real-time global export trends 2026, international trade analysis, commodity pricing intelligence, and AI-driven market demand insights across major trade corridors.">
+    <meta name="keywords" content="export trends 2026, global commodity prices, international trade analysis, export demand countries, trade intelligence platform, market demand insights, export data analytics">
+    
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+  <path fill='%233b82f6' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z'/>
+</svg>">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .font-mono {
+            font-family: 'JetBrains Mono', monospace;
+        }
+        /* Liquid Glassmorphism Terminal Framework */
+        .glass-terminal {
+            background: rgba(6, 10, 22, 0.75);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+        .glass-terminal-header {
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .glass-pill {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-cyan {
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+        }
+        .glow-amber {
+            box-shadow: 0 0 20px rgba(245, 158, 11, 0.15);
+        }
+        /* Micro Sparklines CSS */
+        .sparkline-svg {
+            stroke-dasharray: 500;
+            stroke-dashoffset: 0;
+            animation: draw 3s linear infinite;
+        }
+        .material-symbols-rounded {
+            font-variant-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="bg-slate-950 text-slate-100 min-h-screen relative overflow-x-hidden antialiased">
+
+    <div class="fixed inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-slate-950/85 z-10"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(6,182,212,0.12)_0%,transparent_60%)] z-20"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(30,58,138,0.2)_0%,transparent_50%)] z-20"></div>
+    </div>
+
+    <div class="relative z-10 w-full flex flex-col min-h-screen">
+
+        <header class="sticky top-0 z-50 w-full px-4 lg:px-8 py-3">
+            <nav class="max-w-[1600px] mx-auto navbar glass-terminal rounded-full px-6 justify-between transition-all duration-300">
+                <div class="navbar-start">
+                    <a href="#" class="text-lg font-black tracking-wider bg-clip-text text-transparent bg-gradient-to-r from-white via-slate-200 to-cyan-400">
+                        EXPORTIA <span class="text-[9px] font-mono tracking-widest px-2 py-0.5 rounded bg-cyan-500/10 text-cyan-400 ml-1">OS</span>
+                    </a>
+                </div>
+                <div class="navbar-center hidden lg:flex">
+                    <ul class="menu menu-horizontal gap-1 px-1 text-xs font-semibold uppercase tracking-wider text-slate-400">
+                        <li><a href="#" class="hover:text-cyan-400 rounded-full">Global Terminals</a></li>
+                        <li><a href="#" class="text-white bg-white/5 rounded-full">Market Intelligence</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 rounded-full">Freight Matrices</a></li>
+                        <li><a href="#" class="hover:text-cyan-400 rounded-full">Risk Parameters</a></li>
+                    </ul>
+                </div>
+                <div class="navbar-end gap-3">
+                    <div class="flex items-center gap-1.5 px-3 py-1 rounded-full bg-emerald-500/10 text-emerald-400 text-[10px] font-mono uppercase tracking-wider">
+                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span> Terminal Connected
+                    </div>
+                </div>
+            </nav>
+        </header>
+
+        <main class="max-w-[1600px] mx-auto w-full px-4 lg:px-8 py-4 flex-grow grid grid-cols-1 lg:grid-cols-12 gap-6">
+
+            <section class="lg:col-span-12 flex flex-col md:flex-row md:items-center justify-between gap-4 border-b border-white/5 pb-4">
+                <div>
+                    <div class="flex items-center gap-2 text-xs font-mono text-cyan-400 uppercase tracking-widest">
+                        <span class="material-symbols-rounded text-sm">query_stats</span> Global Trade Data Observatory
+                    </div>
+                    <h1 class="text-2xl md:text-3xl font-extrabold text-white tracking-tight mt-1">Market Intelligence Dashboard</h1>
+                    <p class="text-xs text-slate-400 mt-0.5">Track global export trends 2026, commodity demand shifts, pricing intelligence, and macro trade flow analytics in real time.</p>
+                </div>
+                <div class="flex items-center gap-6 bg-black/40 border border-white/5 rounded-xl px-4 py-2.5 font-mono text-xs">
+                    <div>
+                        <span class="text-slate-500 block text-[10px] uppercase">Data Stream Frequency</span>
+                        <span class="text-slate-200 font-medium">High-Frequency Data Visualization</span>
+                    </div>
+                    <div class="border-l border-white/5 pl-6">
+                        <span class="text-slate-500 block text-[10px] uppercase">Analysis Engine Status</span>
+                        <span class="text-cyan-400 font-bold flex items-center gap-1">
+                            <span class="material-symbols-rounded text-sm animate-spin">bolt</span> Live Node
+                        </span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="lg:col-span-12 glass-terminal rounded-2xl p-5 border border-cyan-500/10 glow-cyan relative overflow-hidden">
+                <div class="absolute right-0 top-0 w-96 h-full bg-[radial-gradient(circle_at_right,rgba(6,182,212,0.08)_0%,transparent_70%)] pointer-events-none"></div>
+                <div class="flex items-center justify-between border-b border-white/5 pb-3 mb-4">
+                    <div class="flex items-center gap-2">
+                        <span class="material-symbols-rounded text-cyan-400">smart_toy</span>
+                        <h2 class="text-sm font-bold text-white uppercase tracking-wider">AI Market Demand Insights Engine</h2>
+                    </div>
+                    <span class="text-[10px] font-mono text-cyan-400 bg-cyan-500/10 px-2 py-0.5 rounded uppercase">AI Insight Active</span>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-4 gap-4 text-xs">
+                    <div class="space-y-1 p-3 rounded-xl bg-white/5 border border-white/5">
+                        <span class="text-cyan-400 font-bold uppercase tracking-wider text-[10px] block">AI Export Trend Summary</span>
+                        <p class="text-slate-300 leading-relaxed">Global trade analysis shows macro rotation toward sustainable packaging matrices and localized high-density carbon alternatives across G7 economies.</p>
+                    </div>
+                    <div class="space-y-1 p-3 rounded-xl bg-white/5 border border-white/5">
+                        <span class="text-emerald-400 font-bold uppercase tracking-wider text-[10px] block">AI Opportunity Detection</span>
+                        <p class="text-slate-300 leading-relaxed">Supply deficits identified in European agro-processing corridors. Indonesia-origin logistics routes show 14% yield premium optimizations.</p>
+                    </div>
+                    <div class="space-y-1 p-3 rounded-xl bg-white/5 border border-white/5">
+                        <span class="text-amber-400 font-bold uppercase tracking-wider text-[10px] block">AI Risk Signals</span>
+                        <p class="text-slate-300 leading-relaxed">Elevated volatility indexes registered across maritime fuel bunkers. Predictive analysis points to localized structural congestion within Suez transitways.</p>
+                    </div>
+                    <div class="space-y-1 p-3 rounded-xl bg-white/5 border border-white/5">
+                        <span class="text-purple-400 font-bold uppercase tracking-wider text-[10px] block">Recommended Focus Products</span>
+                        <div class="pt-1 flex flex-wrap gap-1">
+                            <span class="px-2 py-0.5 bg-purple-500/10 text-purple-300 rounded font-mono text-[10px]">Activated Carbon</span>
+                            <span class="px-2 py-0.5 bg-purple-500/10 text-purple-300 rounded font-mono text-[10px]">Agro-Briquettes</span>
+                            <span class="px-2 py-0.5 bg-purple-500/10 text-purple-300 rounded font-mono text-[10px]">Semiconductor Substrates</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="lg:col-span-8 space-y-6">
+
+                <div class="glass-terminal rounded-2xl overflow-hidden">
+                    <div class="glass-terminal-header p-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-cyan-400">trending_up</span>
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider">Rising & Declining Commodity Trends</h3>
+                        </div>
+                        <span class="text-[10px] font-mono text-slate-500">Updated 2m ago</span>
+                    </div>
+                    <div class="p-4 grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold text-emerald-400 flex items-center gap-1">
+                                    <span class="material-symbols-rounded text-sm">arrow_upward</span> Rising Categories
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-500">Seasonal Trade Shift</span>
+                            </div>
+                            <div class="space-y-2.5">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-slate-300">Biomass & Coconut Substrates</span>
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-16 h-4 stroke-emerald-500 fill-none stroke-2" viewBox="0 0 60 16">
+                                            <path d="M0 14 Q 15 12 30 6 T 60 2" />
+                                        </svg>
+                                        <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">Trend Score: 94</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-slate-300">Rare Earth Electronic Alloys</span>
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-16 h-4 stroke-emerald-500 fill-none stroke-2" viewBox="0 0 60 16">
+                                            <path d="M0 15 Q 15 10 30 11 T 60 4" />
+                                        </svg>
+                                        <span class="font-mono text-emerald-400 font-bold bg-emerald-500/10 px-1.5 py-0.5 rounded">Trend Score: 89</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-slate-950/60 border border-white/5 space-y-3">
+                            <div class="flex justify-between items-center">
+                                <span class="text-xs font-bold text-amber-500 flex items-center gap-1">
+                                    <span class="material-symbols-rounded text-sm">arrow_downward</span> Declining Commodities
+                                </span>
+                                <span class="text-[10px] font-mono text-slate-500">Global Trade Momentum</span>
+                            </div>
+                            <div class="space-y-2.5">
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-slate-300">Unprocessed Timber Blocks</span>
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-16 h-4 stroke-amber-500 fill-none stroke-2" viewBox="0 0 60 16">
+                                            <path d="M0 2 Q 15 4 30 10 T 60 14" />
+                                        </svg>
+                                        <span class="font-mono text-amber-500 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded">Trend Score: 31</span>
+                                    </div>
+                                </div>
+                                <div class="flex items-center justify-between text-xs">
+                                    <span class="text-slate-300">Low-Grade Synthetic Polymers</span>
+                                    <div class="flex items-center gap-3">
+                                        <svg class="w-16 h-4 stroke-amber-500 fill-none stroke-2" viewBox="0 0 60 16">
+                                            <path d="M0 4 Q 15 5 30 12 T 60 15" />
+                                        </svg>
+                                        <span class="font-mono text-amber-500 font-bold bg-amber-500/10 px-1.5 py-0.5 rounded">Trend Score: 24</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-terminal rounded-2xl overflow-hidden">
+                    <div class="glass-terminal-header p-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-cyan-400">inventory_2</span>
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider">Top Globally Traded Commodities</h3>
+                        </div>
+                        <span class="text-xs text-slate-400 font-mono">Indexable Trade Volumes</span>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-white/5 gap-3">
+                            <div class="flex items-center gap-3">
+                                <span class="font-mono text-slate-500 text-xs w-4">01</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">Agricultural Bio-Energy Media</h4>
+                                    <span class="text-[10px] text-slate-500">Includes coconut shells, industrial husks, organic substrates</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-6 justify-between sm:justify-end">
+                                <div class="text-left sm:text-right">
+                                    <span class="text-[9px] text-slate-500 block uppercase">Export Volume Ranking</span>
+                                    <span class="font-mono text-xs text-slate-200">14.2M Metric Tons</span>
+                                </div>
+                                <div class="text-left sm:text-right">
+                                    <span class="text-[9px] text-slate-500 block uppercase">Demand Stability Index</span>
+                                    <span class="text-xs font-bold text-emerald-400 flex items-center justify-end gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 9.2/10
+                                    </span>
+                                </div>
+                                <div class="w-16 bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-cyan-400 h-full w-[92%]"></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-col sm:flex-row sm:items-center justify-between p-3 rounded-xl bg-slate-900/60 border border-white/5 gap-3">
+                            <div class="flex items-center gap-3">
+                                <span class="font-mono text-slate-500 text-xs w-4">02</span>
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">Precision Electronic Components</h4>
+                                    <span class="text-[10px] text-slate-500">Micro-conductor arrays, intermediate assembly modules</span>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-6 justify-between sm:justify-end">
+                                <div class="text-left sm:text-right">
+                                    <span class="text-[9px] text-slate-500 block uppercase">Export Volume Ranking</span>
+                                    <span class="font-mono text-xs text-slate-200">8.9M Metric Tons</span>
+                                </div>
+                                <div class="text-left sm:text-right">
+                                    <span class="text-[9px] text-slate-500 block uppercase">Demand Stability Index</span>
+                                    <span class="text-xs font-bold text-emerald-400 flex items-center justify-end gap-1">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-emerald-400"></span> 8.6/10
+                                    </span>
+                                </div>
+                                <div class="w-16 bg-slate-800 h-1.5 rounded-full overflow-hidden">
+                                    <div class="bg-cyan-400 h-full w-[86%]"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-terminal rounded-2xl overflow-hidden">
+                    <div class="glass-terminal-header p-4">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-cyan-400">business_center</span>
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider">Trade Analysis Engine & Opportunity Gaps</h3>
+                        </div>
+                    </div>
+                    <div class="p-4 grid grid-cols-1 md:grid-cols-3 gap-4">
+                        <div class="p-3 bg-black/40 border border-white/5 rounded-xl text-xs space-y-1">
+                            <span class="text-slate-500 uppercase tracking-wider text-[10px] block">Supply vs Demand Imbalance</span>
+                            <div class="text-lg font-bold font-mono text-white mt-1">+28.4% Net Deficit</div>
+                            <p class="text-[11px] text-slate-400">Demand outpaces localized production curves within North American target ports.</p>
+                        </div>
+                        <div class="p-3 bg-black/40 border border-white/5 rounded-xl text-xs space-y-1">
+                            <span class="text-slate-500 uppercase tracking-wider text-[10px] block">Export Opportunity Gap Score</span>
+                            <div class="text-lg font-bold font-mono text-cyan-400 mt-1">88 / 100 High Yield</div>
+                            <p class="text-[11px] text-slate-400">Unsaturated trade niches open for immediate regional commercial exploitation.</p>
+                        </div>
+                        <div class="p-3 bg-black/40 border border-white/5 rounded-xl text-xs space-y-1">
+                            <span class="text-slate-500 uppercase tracking-wider text-[10px] block">Competitive Saturation Level</span>
+                            <div class="text-lg font-bold font-mono text-amber-400 mt-1">Medium Volatility</div>
+                            <p class="text-[11px] text-slate-400">Market density index signals consolidation phase among second-tier suppliers.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="lg:col-span-4 space-y-6">
+
+                <div class="glass-terminal rounded-2xl overflow-hidden">
+                    <div class="glass-terminal-header p-4 flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-cyan-400">monitoring</span>
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider">Commodity Price Fluctuations</h3>
+                        </div>
+                        <span class="text-[10px] font-mono text-slate-500">Live Terminal Rates</span>
+                    </div>
+                    <div class="p-4 space-y-4">
+                        <div class="p-3 rounded-xl bg-slate-950/80 border border-white/5 flex items-center justify-between text-xs">
+                            <div class="space-y-0.5">
+                                <span class="text-slate-200 font-bold block">Grade-A Coconut Shell Cores</span>
+                                <span class="text-[10px] font-mono text-slate-500 block">Average Export Pricing Benchmark</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-mono text-emerald-400 font-bold block">$1,240 / MT</span>
+                                <span class="text-[10px] font-mono text-emerald-400 bg-emerald-500/10 px-1 rounded inline-block mt-0.5">+4.2% MoM</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3 rounded-xl bg-slate-950/80 border border-white/5 flex items-center justify-between text-xs">
+                            <div class="space-y-0.5">
+                                <span class="text-slate-200 font-bold block">Refined Oleoresin Extracts</span>
+                                <span class="text-[10px] font-mono text-slate-500 block">Average Export Pricing Benchmark</span>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-mono text-amber-500 font-bold block">$3,850 / MT</span>
+                                <span class="text-[10px] font-mono text-amber-500 bg-amber-500/10 px-1 rounded inline-block mt-0.5">-1.8% MoM</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3 rounded-xl bg-cyan-950/20 border border-cyan-500/10 text-xs">
+                            <span class="text-cyan-400 text-[10px] font-bold uppercase tracking-wider block">AI Predicted Price Movement</span>
+                            <p class="text-slate-300 text-[11px] mt-1 leading-relaxed">Predictive neural sets indicate an upward correction of +6.5% inside Q3 2026 owing to structural tightening of container distributions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="glass-terminal rounded-2xl overflow-hidden">
+                    <div class="glass-terminal-header p-4">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-cyan-400">public</span>
+                            <h3 class="text-sm font-bold text-white uppercase tracking-wider">Top Importing & Demand Countries</h3>
+                        </div>
+                    </div>
+                    <div class="p-4 space-y-3">
+                        <div class="p-3 rounded-xl bg-slate-950/60 border border-white/5 flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,1)]"></span>
+                                <div>
+                                    <span class="text-slate-200 font-bold block">Germany (Euro Hub Corridors)</span>
+                                    <span class="text-[10px] text-slate-500 block">Sector-Specific Demand: Manufacturing Matrice</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-mono text-slate-300 block">Score: 96</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest block font-mono">Import Dep</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3 rounded-xl bg-slate-950/60 border border-white/5 flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,1)]"></span>
+                                <div>
+                                    <span class="text-slate-200 font-bold block">Japan (Pacific Logistics Nodes)</span>
+                                    <span class="text-[10px] text-slate-500 block">Sector-Specific Demand: Advanced Technology Inputs</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-mono text-slate-300 block">Score: 91</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest block font-mono">Import Dep</span>
+                            </div>
+                        </div>
+
+                        <div class="p-3 rounded-xl bg-slate-950/60 border border-white/5 flex items-center justify-between text-xs">
+                            <div class="flex items-center gap-2.5">
+                                <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-[0_0_8px_rgba(6,182,212,1)]"></span>
+                                <div>
+                                    <span class="text-slate-200 font-bold block">United Arab Emirates</span>
+                                    <span class="text-[10px] text-slate-500 block">Sector-Specific Demand: Consumer Retail Wholesales</span>
+                                </div>
+                            </div>
+                            <div class="text-right">
+                                <span class="font-mono text-slate-300 block">Score: 87</span>
+                                <span class="text-[9px] text-slate-500 uppercase tracking-widest block font-mono">Import Dep</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-gradient-to-br from-slate-900 to-cyan-950/40 border border-cyan-500/20 space-y-3">
+                    <h4 class="text-xs font-bold text-white uppercase tracking-wider">Unlock Custom Trade Corridors</h4>
+                    <p class="text-[11px] text-slate-400 leading-relaxed">Filter custom data sets across 180+ global target ports. Gain automated algorithmic alerts tailored to your production vertical.</p>
+                    <button class="btn btn-xs bg-cyan-500 hover:bg-cyan-600 border-none text-slate-950 font-bold w-full rounded h-8 uppercase tracking-wider">Configure Custom Feed</button>
+                </div>
+
+            </div>
+
+        </main>
+
+        <section class="w-full bg-slate-950/90 border-t border-white/5 py-12 px-4 lg:px-8 mt-12 relative z-10">
+            <div class="max-w-[1600px] mx-auto grid grid-cols-1 md:grid-cols-3 gap-8 text-xs text-slate-400 leading-relaxed">
+                <div class="space-y-2">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Methodology & Trade Intelligence Platform Analytics</h4>
+                    <p>Exportia data arrays utilize aggregate customs registry manifests, predictive container positioning signals, and high-density global trade telemetry to model macro supply curves. Content indexes undergo validation every fiscal hour to ensure premium data density.</p>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">2026 Macro Forecast Interpretations</h4>
+                    <p>Understanding market demand insights demands strict isolation of transit corridor disruptions from structural manufacturing deficits. Our terminal algorithms adjust localized values against volatility variables to preserve baseline pricing accuracy.</p>
+                </div>
+                <div class="space-y-2">
+                    <h4 class="text-sm font-bold text-white uppercase tracking-wider">Regulatory Compliance & Structural Audits</h4>
+                    <p>Global commodity prices recorded inside this macro command hub remain bound to standard Incoterms parameters. Users are urged to correlate cross-border transactional tariffs against specific customs clearance protocols native to landing nodes.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer p-8 max-w-[1600px] mx-auto border-t border-white/5 text-slate-600 justify-between text-xs relative z-10 bg-slate-950/40">
+            <aside class="space-y-1">
+                <span class="text-sm font-bold text-white tracking-wider">EXPORTIA TRADING SYSTEMS</span>
+                <p>&copy; 2026 Exportia Platform Ecosystem. Sovereign data engine architecture. All rights reserved.</p>
+            </aside>
+            <nav class="flex gap-6">
+                <a href="#" class="link link-hover hover:text-cyan-400">API Documentation</a>
+                <a href="#" class="link link-hover hover:text-cyan-400">Terminal Node Security</a>
+                <a href="#" class="link link-hover hover:text-cyan-400">Data Schema Index</a>
+            </nav>
+        </footer>
+
+    </div>
+
+<script src="nav_page.js"></script>
+</body>
+</html>

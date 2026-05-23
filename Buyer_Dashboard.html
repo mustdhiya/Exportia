@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exportia Sourcing OS — Enterprise Buyer Control Center</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.7.2/dist/full.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'>
+  <path fill='%233b82f6' d='M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z'/>
+</svg>"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #020617;
+        }
+        /* High-Density Liquid Glassmorphism System */
+        .glass-dashboard {
+            background: rgba(8, 12, 24, 0.65);
+            backdrop-filter: blur(20px) saturate(180%);
+            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glass-dashboard-strong {
+            background: rgba(5, 8, 18, 0.85);
+            backdrop-filter: blur(28px) saturate(200%);
+            -webkit-backdrop-filter: blur(28px) saturate(200%);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        .glass-card-nested {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+        }
+        .glass-pill-status {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        /* Custom Webkit Scrollbars for Dense Data Layouts */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: rgba(2, 6, 23, 0.5);
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 20px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #10b981;
+        }
+        .material-symbols-rounded {
+            font-variant-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="text-slate-100 min-h-screen relative overflow-x-hidden antialiased flex">
+
+    <div class="fixed inset-0 w-full h-full z-0 overflow-hidden pointer-events-none">
+        <video autoplay muted loop playsinline class="w-full h-full object-cover">
+            <source src="https://d8j0ntlcm91z4.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/hf_20260315_073750_51473149-4350-4920-ae24-c8214286f323.mp4" type="video/mp4">
+        </video>
+        <div class="absolute inset-0 bg-gradient-to-tr from-slate-950 via-black/75 to-slate-950/90 z-10"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(16,185,129,0.05),transparent_45%)] z-20"></div>
+    </div>
+
+    <aside class="fixed inset-y-0 left-0 w-64 z-30 hidden lg:flex flex-col p-4 pointer-events-none">
+        <div class="w-full h-full glass-dashboard rounded-[2rem] flex flex-col p-6 pointer-events-auto shadow-2xl shadow-black/50">
+            <div class="mb-8 px-2">
+                <span class="text-xs font-black tracking-[0.25em] text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-300 to-emerald-400 block">EXPORTIA</span>
+                <span class="text-[9px] uppercase font-bold tracking-widest text-slate-500 block mt-0.5">Sourcing Intelligence OS</span>
+            </div>
+
+            <nav class="flex-grow space-y-1">
+                <a href="#overview" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide text-emerald-400 bg-white/5 border border-white/5 transition-all">
+                    <span class="material-symbols-rounded text-lg">monitoring</span> Overview
+                </a>
+                <a href="#saved-suppliers" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                    <span class="material-symbols-rounded text-lg">factory</span> Saved Suppliers
+                </a>
+                <a href="#rfq-management" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                    <span class="material-symbols-rounded text-lg">description</span> RFQ Management
+                </a>
+                <a href="#inquiry-tracking" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                    <span class="material-symbols-rounded text-lg">mail</span> Inquiry Tracking
+                </a>
+                <a href="#supplier-comparison" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                    <span class="material-symbols-rounded text-lg">query_stats</span> Comparisons
+                </a>
+                <a href="#quotation-inbox" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                    <span class="material-symbols-rounded text-lg">inventory_2</span> Quotations
+                    <span class="ml-auto w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                </a>
+                <a href="#pipeline-view" class="flex items-center gap-3 px-4 py-2.5 rounded-xl text-xs font-bold tracking-wide text-slate-400 hover:text-white hover:bg-white/5 transition-all">
+                    <span class="material-symbols-rounded text-lg">handshake</span> Active Deals
+                </a>
+            </nav>
+
+            <div class="border-t border-white/5 pt-4 mt-auto">
+                <div class="flex items-center gap-3 px-2">
+                    <div class="w-8 h-8 rounded-lg bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center">
+                        <span class="material-symbols-rounded text-sm text-emerald-400">business_center</span>
+                    </div>
+                    <div class="truncate">
+                        <span class="text-xs font-bold text-white block truncate">Global Importers Ltd</span>
+                        <span class="text-[10px] text-slate-500 block truncate">Enterprise Account</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="relative z-10 flex-grow w-full lg:pl-72 min-h-screen flex flex-col p-4 lg:p-6 space-y-6 overflow-hidden">
+        
+        <header class="lg:hidden flex items-center justify-between p-4 glass-dashboard rounded-2xl w-full">
+            <span class="text-xs font-black tracking-widest text-white">EXPORTIA OS</span>
+            <button class="btn btn-square btn-ghost btn-sm text-white">
+                <span class="material-symbols-rounded">menu</span>
+            </button>
+        </header>
+
+        <section id="overview" class="w-full space-y-6 pt-2">
+            <div>
+                <h1 class="text-2xl lg:text-3xl font-bold tracking-tight text-white">Buyer Procurement Dashboard</h1>
+                <p class="text-xs text-slate-400 mt-1">Manage global corporate suppliers, real-time RFQ statuses, incoming quotations, and enterprise workflow funnels.</p>
+            </div>
+
+            <div class="grid grid-cols-2 lg:grid-cols-4 gap-4 w-full">
+                <div class="glass-dashboard p-4 rounded-2xl flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5">
+                        <span class="material-symbols-rounded text-slate-400">description</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500 block">Active RFQs</span>
+                        <span class="text-xl font-black text-white block mt-0.5">14</span>
+                    </div>
+                </div>
+                <div class="glass-dashboard p-4 rounded-2xl flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5">
+                        <span class="material-symbols-rounded text-slate-400">factory</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500 block">Saved Suppliers</span>
+                        <span class="text-xl font-black text-white block mt-0.5">38</span>
+                    </div>
+                </div>
+                <div class="glass-dashboard p-4 rounded-2xl flex items-center gap-4 relative overflow-hidden">
+                    <div class="absolute right-0 top-0 w-1.5 h-full bg-emerald-500"></div>
+                    <div class="w-10 h-10 rounded-xl bg-emerald-500/10 flex items-center justify-center border border-emerald-500/20">
+                        <span class="material-symbols-rounded text-emerald-400">inventory_2</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500 block">Pending Quotes</span>
+                        <span class="text-xl font-black text-emerald-400 block mt-0.5">9 New</span>
+                    </div>
+                </div>
+                <div class="glass-dashboard p-4 rounded-2xl flex items-center gap-4">
+                    <div class="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center border border-white/5">
+                        <span class="material-symbols-rounded text-slate-400">handshake</span>
+                    </div>
+                    <div>
+                        <span class="text-[10px] uppercase font-bold tracking-wider text-slate-500 block">Ongoing Deals</span>
+                        <span class="text-xl font-black text-white block mt-0.5">3 Pipeline</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="pipeline-view" class="glass-dashboard p-5 rounded-2xl w-full space-y-4">
+            <div class="flex items-center gap-2">
+                <span class="material-symbols-rounded text-sm text-slate-400">handshake</span>
+                <h3 class="text-xs font-bold uppercase tracking-wider text-slate-300">Procurement Funnel & Contract Pipeline</h3>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-5 gap-3 w-full pt-1">
+                <div class="p-3 rounded-xl glass-card-nested border-l-2 border-slate-500">
+                    <span class="text-[10px] uppercase font-bold text-slate-400 block">01. RFQ Emitted</span>
+                    <span class="text-xs font-semibold text-white mt-1 block">4 Active Tenders</span>
+                </div>
+                <div class="p-3 rounded-xl glass-card-nested border-l-2 border-cyan-500 bg-cyan-950/10">
+                    <span class="text-[10px] uppercase font-bold text-cyan-400 block">02. Supplier Response</span>
+                    <span class="text-xs font-semibold text-white mt-1 block">28 Quotations In</span>
+                </div>
+                <div class="p-3 rounded-xl glass-card-nested border-l-2 border-purple-500">
+                    <span class="text-[10px] uppercase font-bold text-purple-400 block">03. Review & Compare</span>
+                    <span class="text-xs font-semibold text-white mt-1 block">2 Asset Brackets</span>
+                </div>
+                <div class="p-3 rounded-xl glass-card-nested border-l-2 border-amber-500">
+                    <span class="text-[10px] uppercase font-bold text-amber-400 block">04. Contract Negotiation</span>
+                    <span class="text-xs font-semibold text-white mt-1 block">1 Final Revision</span>
+                </div>
+                <div class="p-3 rounded-xl glass-card-nested border-l-2 border-emerald-500 bg-emerald-950/10">
+                    <span class="text-[10px] uppercase font-bold text-emerald-400 block">05. Confirmed Order</span>
+                    <span class="text-xs font-semibold text-white mt-1 block">LC Signed / Pending</span>
+                </div>
+            </div>
+        </section>
+
+        <div class="grid grid-cols-1 xl:grid-cols-12 gap-6 items-start w-full">
+            
+            <div class="xl:col-span-7 space-y-6 w-full">
+                
+                <section id="rfq-management" class="glass-dashboard p-5 rounded-3xl w-full space-y-4">
+                    <div class="flex items-center justify-between border-b border-white/5 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-emerald-400">description</span>
+                            <h2 class="text-sm font-bold uppercase tracking-wider text-white">Active RFQ Matrix</h2>
+                        </div>
+                        <button class="btn btn-ghost btn-xs text-xs font-semibold text-slate-400 hover:text-white">View Complete Ledger</button>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="p-4 rounded-xl glass-card-nested flex flex-col md:flex-row justify-between gap-4 items-start md:items-center">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <h4 class="text-xs font-bold text-white">Premium Coconut Charcoal Cubes</h4>
+                                    <span class="glass-pill-status text-[9px] px-2 py-0.5 rounded text-cyan-400 font-bold uppercase">Quoted</span>
+                                </div>
+                                <p class="text-[11px] text-slate-400">Target Volume: 2x40ft FCL HQ • Destination: Rotterdam Port</p>
+                                <div class="w-44 bg-slate-900 h-1 rounded-full mt-2 overflow-hidden">
+                                    <div class="bg-cyan-400 h-full w-3/4"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 text-right w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 border-white/5 pt-2 md:pt-0">
+                                <div>
+                                    <span class="text-[9px] text-slate-500 block uppercase font-bold">Responses</span>
+                                    <span class="text-xs font-bold text-white block">8 Manufacturers</span>
+                                </div>
+                                <button class="btn bg-white/5 hover:bg-white/10 border border-white/5 text-white btn-xs rounded">Audit</button>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl glass-card-nested flex flex-col md:flex-row justify-between gap-4 items-start md:items-center">
+                            <div class="space-y-1">
+                                <div class="flex items-center gap-2 flex-wrap">
+                                    <h4 class="text-xs font-bold text-white">Organic Desiccated Coconut High Fat</h4>
+                                    <span class="glass-pill-status text-[9px] px-2 py-0.5 rounded text-amber-400 font-bold uppercase">Negotiation</span>
+                                </div>
+                                <p class="text-[11px] text-slate-400">Target Volume: 15 Metric Tons • Destination: Jebel Ali Port</p>
+                                <div class="w-44 bg-slate-900 h-1 rounded-full mt-2 overflow-hidden">
+                                    <div class="bg-amber-400 h-full w-11/12"></div>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-4 text-right w-full md:w-auto justify-between md:justify-end border-t md:border-t-0 border-white/5 pt-2 md:pt-0">
+                                <div>
+                                    <span class="text-[9px] text-slate-500 block uppercase font-bold">Responses</span>
+                                    <span class="text-xs font-bold text-white block">3 Manufacturers</span>
+                                </div>
+                                <button class="btn bg-white/5 hover:bg-white/10 border border-white/5 text-white btn-xs rounded">Audit</button>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="quotation-inbox" class="glass-dashboard p-5 rounded-3xl w-full space-y-4">
+                    <div class="flex items-center justify-between border-b border-white/5 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-emerald-400">inventory_2</span>
+                            <h2 class="text-sm font-bold uppercase tracking-wider text-white">Quotation Desk Inbox</h2>
+                        </div>
+                        <span class="text-[10px] text-emerald-400 font-mono tracking-wider bg-emerald-500/10 px-2 py-0.5 rounded-full border border-emerald-500/20">9 Streaming Live</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="p-4 rounded-xl glass-card-nested space-y-3 relative overflow-hidden border-l-2 border-emerald-400">
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded bg-slate-900 flex items-center justify-center border border-white/10">
+                                        <span class="material-symbols-rounded text-xs text-emerald-400">factory</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-white">PT. Coconut Carbon Global</span>
+                                        <span class="text-[9px] text-slate-500 ml-2">Verified Supplier</span>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-mono text-slate-400">Valid Till: 30 Jun 2026</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-black/40 p-3 rounded-xl border border-white/5">
+                                <div>
+                                    <span class="text-[9px] text-slate-500 uppercase font-bold block">Quoted Price</span>
+                                    <span class="text-xs font-black text-emerald-400 mt-0.5 block">$1,250.00 / MT</span>
+                                </div>
+                                <div>
+                                    <span class="text-[9px] text-slate-500 uppercase font-bold block">Incoterm Base</span>
+                                    <span class="text-xs font-bold text-white mt-0.5 block">FOB Jakarta</span>
+                                </div>
+                                <div>
+                                    <span class="text-[9px] text-slate-500 uppercase font-bold block">Production Lead</span>
+                                    <span class="text-xs font-bold text-white mt-0.5 block">25 Days Contract</span>
+                                </div>
+                                <div>
+                                    <span class="text-[9px] text-slate-500 uppercase font-bold block">Assay Report</span>
+                                    <span class="text-xs font-medium text-cyan-400 mt-0.5 flex items-center gap-0.5 block"><span class="material-symbols-rounded text-xs">description</span> SGS_Test.pdf</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center gap-4 pt-1">
+                                <p class="text-[10px] text-slate-400 italic truncate max-w-xs">"Enclosed our pricing for custom outer boxes. Assay parameter matches your carbonization metric constraints..."</p>
+                                <div class="flex gap-2">
+                                    <button class="btn btn-ghost hover:bg-red-500/10 text-red-400 btn-xs rounded px-2">Reject</button>
+                                    <button class="btn btn-ghost bg-white/5 hover:bg-white/10 text-slate-300 btn-xs rounded px-2">Negotiate</button>
+                                    <button class="btn bg-emerald-500 hover:bg-emerald-600 border-none text-slate-950 font-bold btn-xs rounded px-3 shadow-lg shadow-emerald-500/10">Accept</button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl glass-card-nested space-y-3 relative overflow-hidden">
+                            <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-2">
+                                <div class="flex items-center gap-2">
+                                    <div class="w-6 h-6 rounded bg-slate-900 flex items-center justify-center border border-white/10">
+                                        <span class="material-symbols-rounded text-xs text-slate-400">factory</span>
+                                    </div>
+                                    <div>
+                                        <span class="text-xs font-bold text-white">CV. Java Charcoal Export</span>
+                                        <span class="text-[9px] text-slate-500 ml-2">Standard Audit</span>
+                                    </div>
+                                </div>
+                                <span class="text-[10px] font-mono text-slate-400">Valid Till: 15 Jun 2026</span>
+                            </div>
+
+                            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2 bg-black/40 p-3 rounded-xl border border-white/5">
+                                <div>
+                                    <span class="text-[9px] text-slate-500 uppercase font-bold block">Quoted Price</span>
+                                    <span class="text-xs font-black text-white mt-0.5 block">$1,290.00 / MT</span>
+                                </div>
+                                <div>
+                                    <span class="text-[9px] text-slate-500 uppercase font-bold block">Incoterm Base</span>
+                                    <span class="text-xs font-bold text-white mt-0.5 block">FOB Semarang</span>
+                                </div>
+                                <div>
+                                    <span class="text-[9px] text-slate-500 uppercase font-bold block">Production Lead</span>
+                                    <span class="text-xs font-bold text-white mt-0.5 block">30 Days Contract</span>
+                                </div>
+                                <div>
+                                    <span class="text-[9px] text-slate-500 uppercase font-bold block">Assay Report</span>
+                                    <span class="text-xs text-slate-500 mt-0.5 block">None Attached</span>
+                                </div>
+                            </div>
+
+                            <div class="flex justify-between items-center gap-4 pt-1">
+                                <p class="text-[10px] text-slate-400 italic truncate max-w-xs">"Can dispatch immediate sample box if airfreight details are provisioned..."</p>
+                                <div class="flex gap-2">
+                                    <button class="btn btn-ghost hover:bg-red-500/10 text-red-400 btn-xs rounded px-2">Reject</button>
+                                    <button class="btn bg-white/5 hover:bg-white/10 border border-white/5 text-slate-300 btn-xs rounded px-3">Review</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+            <div class="xl:col-span-5 space-y-6 w-full">
+                
+                <section id="saved-suppliers" class="glass-dashboard p-5 rounded-3xl w-full space-y-4">
+                    <div class="flex items-center justify-between border-b border-white/5 pb-3">
+                        <div class="flex items-center gap-2">
+                            <span class="material-symbols-rounded text-emerald-400">factory</span>
+                            <h2 class="text-sm font-bold uppercase tracking-wider text-white">Sourcing CRM Favorites</h2>
+                        </div>
+                        <span class="text-[10px] text-slate-400">38 Monitored</span>
+                    </div>
+
+                    <div class="space-y-3">
+                        <div class="p-3 rounded-xl glass-card-nested space-y-2">
+                            <div class="flex justify-between items-start gap-2">
+                                <div>
+                                    <h4 class="text-xs font-bold text-white">PT. Carbon Nusantara Biofuel</h4>
+                                    <span class="text-[10px] text-slate-500">Sulawesi Center • Coconut Shell Derivative</span>
+                                </div>
+                                <span class="glass-pill-status text-[9px] px-2 py-0.5 rounded text-emerald-400 font-bold flex items-center gap-0.5"><span class="material-symbols-rounded text-[10px]">verified</span> AUDITED</span>
+                            </div>
+                            <div class="flex flex-wrap gap-1.5 pt-1">
+                                <span class="bg-white/5 text-[9px] px-2 py-0.5 rounded text-slate-400 font-medium">HACCP</span>
+                                <span class="bg-white/5 text-[9px] px-2 py-0.5 rounded text-slate-400 font-medium">ISO 9001</span>
+                                <span class="bg-white/5 text-[9px] px-2 py-0.5 rounded text-slate-400 font-medium">SGS Verified</span>
+                            </div>
+                            <div class="flex justify-between items-center pt-2 border-t border-white/5 text-[10px]">
+                                <span class="text-slate-500">Response Rate: <strong class="text-emerald-400">99%</strong></span>
+                                <div class="flex gap-2">
+                                    <a href="#" class="text-slate-400 hover:text-white font-medium">Compare</a>
+                                    <a href="#" class="text-emerald-400 hover:text-emerald-300 font-bold">Emit RFQ</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="inquiry-tracking" class="glass-dashboard p-5 rounded-3xl w-full space-y-4">
+                    <div class="flex items-center gap-2 border-b border-white/5 pb-3">
+                        <span class="material-symbols-rounded text-emerald-400">mail</span>
+                        <h2 class="text-sm font-bold uppercase tracking-wider text-white">Direct Communications Desk</h2>
+                    </div>
+
+                    <div class="space-y-2">
+                        <div class="p-3 rounded-xl glass-card-nested flex justify-between items-center gap-4 hover:bg-white/5 transition-all cursor-pointer">
+                            <div class="space-y-0.5 truncate">
+                                <span class="text-[10px] font-bold text-slate-400 block">CV. Sumatra Agri Commodities</span>
+                                <p class="text-xs font-semibold text-white truncate">"Revised spatial logistics quotation packet sent to procurement panel..."</p>
+                            </div>
+                            <span class="text-[9px] text-slate-500 whitespace-nowrap">2 Hours Ago</span>
+                        </div>
+                        <div class="p-3 rounded-xl glass-card-nested flex justify-between items-center gap-4 hover:bg-white/5 transition-all cursor-pointer">
+                            <div class="space-y-0.5 truncate">
+                                <span class="text-[10px] font-bold text-slate-400 block">PT. Sinar Export Indonesia</span>
+                                <p class="text-xs font-light text-slate-400 truncate">"Samples ready for express freight verification tracking..."</p>
+                            </div>
+                            <span class="text-[9px] text-slate-500 whitespace-nowrap">Yesterday</span>
+                        </div>
+                    </div>
+                </section>
+
+            </div>
+
+        </div>
+
+        <section id="supplier-comparison" class="glass-dashboard p-5 rounded-3xl w-full space-y-4">
+            <div class="flex items-center justify-between border-b border-white/5 pb-3">
+                <div class="flex items-center gap-2">
+                    <span class="material-symbols-rounded text-emerald-400">query_stats</span>
+                    <h2 class="text-sm font-bold uppercase tracking-wider text-white">Side-by-Side Sourcing Matrix</h2>
+                </div>
+                <span class="text-[10px] text-slate-400 uppercase tracking-wider font-semibold">Active Matrix Batch A</span>
+            </div>
+
+            <div class="overflow-x-auto w-full rounded-xl border border-white/5">
+                <table class="table w-full text-xs text-left border-collapse bg-black/20">
+                    <thead>
+                        <tr class="bg-white/5 border-b border-white/10 text-slate-400 font-bold uppercase tracking-wider text-[10px]">
+                            <th class="p-3">Sourcing Parameter</th>
+                            <th class="p-3 border-l border-white/5 text-emerald-400">PT. Coconut Carbon Global</th>
+                            <th class="p-3 border-l border-white/5">CV. Java Charcoal Export</th>
+                            <th class="p-3 border-l border-white/5">PT. Sulawesi Carbon Indo</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-white/5 font-medium text-slate-300">
+                        <tr>
+                            <td class="p-3 font-bold text-slate-400 bg-white/5">FOB Price Metric</td>
+                            <td class="p-3 border-l border-white/5 font-bold text-emerald-400">$1,250 / Metric Ton</td>
+                            <td class="p-3 border-l border-white/5">$1,290 / Metric Ton</td>
+                            <td class="p-3 border-l border-white/5">$1,275 / Metric Ton</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-400 bg-white/5">Minimum Order (MOQ)</td>
+                            <td class="p-3 border-l border-white/5">1x20ft Container</td>
+                            <td class="p-3 border-l border-white/5">1x40ft HQ Container</td>
+                            <td class="p-3 border-l border-white/5">20 Metric Tons</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-400 bg-white/5">Legal Certifications</td>
+                            <td class="p-3 border-l border-white/5">SVLK, HACCP, ISO 9001</td>
+                            <td class="p-3 border-l border-white/5">SVLK, Halal</td>
+                            <td class="p-3 border-l border-white/5">ISO 9001, SGS Checked</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-400 bg-white/5">Response Efficiency</td>
+                            <td class="p-3 border-l border-white/5 text-emerald-400">98% (Within 2 hrs)</td>
+                            <td class="p-3 border-l border-white/5">85% (Within 6 hrs)</td>
+                            <td class="p-3 border-l border-white/5">91% (Within 3 hrs)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-3 font-bold text-slate-400 bg-white/5">Monthly Volume Cap</td>
+                            <td class="p-3 border-l border-white/5">150 Tons</td>
+                            <td class="p-3 border-l border-white/5">300 Tons</td>
+                            <td class="p-3 border-l border-white/5">100 Tons</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section class="glass-dashboard-strong p-6 rounded-[2rem] w-full text-center relative overflow-hidden border border-emerald-500/20 shadow-2xl">
+            <div class="absolute -left-16 -bottom-16 w-48 h-48 bg-emerald-500/5 rounded-full blur-3xl pointer-events-none"></div>
+            <div class="max-w-xl mx-auto space-y-4 py-4 relative z-10">
+                <h2 class="text-xl lg:text-2xl font-bold tracking-tight text-white">Optimize Your Global Sourcing Workflow</h2>
+                <p class="text-xs text-slate-400 max-w-md mx-auto leading-relaxed">Leverage centralized data pipelines to instantly match validated industrial Indonesian suppliers, reducing negotiation loops by up to 40%.</p>
+                <div class="flex flex-col sm:flex-row gap-3 justify-center pt-2">
+                    <button class="btn bg-emerald-500 hover:bg-emerald-600 border-none text-slate-950 font-bold btn-sm rounded-xl px-6 shadow-lg shadow-emerald-500/10">Post New RFQ</button>
+                    <button class="btn btn-outline border-white/10 hover:bg-white/5 text-white btn-sm rounded-xl px-6">Discover Suppliers</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="w-full flex flex-col sm:flex-row justify-between items-center gap-4 text-[10px] text-slate-500 pt-6 border-t border-white/5">
+            <span>&copy; 2026 Exportia Platform Sourcing Engine. Security Standard ISO/IEC 27001 Compliant.</span>
+            <div class="flex gap-4">
+                <a href="#" class="hover:text-slate-300">Procurement Legalities</a>
+                <a href="#" class="hover:text-slate-300">API Documentation</a>
+                <a href="#" class="hover:text-slate-300">System Cloud Status</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <div class="lg:hidden fixed bottom-0 left-0 right-0 p-3 glass-dashboard-strong z-50 border-t border-white/10 flex justify-around items-center text-[10px] text-slate-400">
+        <a href="#overview" class="flex flex-col items-center gap-0.5 text-emerald-400">
+            <span class="material-symbols-rounded text-lg">monitoring</span> Overview
+        </a>
+        <a href="#rfq-management" class="flex flex-col items-center gap-0.5">
+            <span class="material-symbols-rounded text-lg">description</span> RFQs
+        </a>
+        <a href="#quotation-inbox" class="flex flex-col items-center gap-0.5 relative">
+            <span class="absolute top-0 right-1 w-1.5 h-1.5 rounded-full bg-emerald-400"></span>
+            <span class="material-symbols-rounded text-lg">inventory_2</span> Quotes
+        </a>
+        <a href="#supplier-comparison" class="flex flex-col items-center gap-0.5">
+            <span class="material-symbols-rounded text-lg">query_stats</span> Compare
+        </a>
+    </div>
+
+<script src="nav_page.js"></script>
+</body>
+</html>
